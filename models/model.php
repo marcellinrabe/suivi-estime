@@ -1,5 +1,4 @@
 <?php
-
 // connexion à la base test_iteams
 function dbconnect(){
     try{
@@ -11,12 +10,18 @@ function dbconnect(){
     }
 }
 
-function fetchteams(){
+function readindb(){
     $c = dbconnect();
-    // $q as query
-    $q = 'SELECT nom, prenom, user_github_pic FROM membres';
-    $r = $c->query($q);
+    $r = $c->query('SELECT nom, prenom, user_github_pic FROM membres');
     return $r;
+}
+
+
+function save(string $id, string $motif, $string $type){
+    /**
+     * $type can take only value app(for append) or sub(as substract)
+     */
+    echo "not finish";
 }
 
 

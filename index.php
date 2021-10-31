@@ -1,12 +1,12 @@
 <?php
     $user_image = NULL;
     $name = NULL;
-    require 'controllers/controller.php';
-    
-    $lines = fetchbd();
-    showteams($lines);
-    
 
+    require 'controllers/controller.php';
+
+    listTeams(readindb());
+    
+    
     
 
 // manage controller
