@@ -14,7 +14,7 @@ dbconnect();
 
 function readindb(){
     $c = dbconnect();
-    $r = $c->query('SELECT nom, prenom, user_github_pic FROM membres');
+    $r = $c->query('SELECT id, nom, prenom, user_github_pic FROM membres');
     return $r;
 }
 
