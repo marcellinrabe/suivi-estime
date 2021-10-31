@@ -1,28 +1,26 @@
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/frame.css">
-    <title>test iteams</title>
-</head>
--->
+    <?php require 'views/header.php'; ?>
 
     <!-- template used here -->
     <div class="frame"> 
-        <ul>
-            <li><?= $user_image ?></li>
-            <li><?= $name ?></li>
-        </ul>
+            <div class="avatar"></div>
+            <!-- mandrapa lo de atao div img src="assets/img/marcellin.jpg" alt="avatar"> -->
+            <p><?= $name ?></p>
+    
 
         <form action="" method="post">
         <!-- the source below is showing where only a button making point is selected -->
-
-            <label for="motif"></label>
-            <textarea name="motif" id="motif" cols="30" rows="10"></textarea>
-            <input type="submit" value="valider">
+            <div class="button_container">
+                <button type="button" name="app" value="app">+</button>
+                <button type="button" name="sub" value="sub">-</button>
+            </div>
+            
+            <div class="validation">
+                <p>
+                    <label for="motif">motif</label><br/>
+                    <textarea name="motif" id="motif" cols="30" rows="5"></textarea>
+                </p>
+                <div><input type="submit" value="valider"></div>
+            </div>
 
         <!-- ------------------------------------------------------------------------ -->
         </form>

@@ -4,7 +4,6 @@
 function dbconnect(){
     try{
         $c = new PDO('mysql:host=127.0.0.1;dbname=test_iteams','root','');
-        echo 'connexion etablie';
         return $c;
     }
     catch(PDOException $e){
@@ -12,13 +11,14 @@ function dbconnect(){
     }
 }
 
-
 function fetchteams(){
     $c = dbconnect();
     // $q as query
     $q = 'SELECT nom, prenom, user_github_pic FROM membres';
     $r = $c->query($q);
     return $r;
-
 }
+
+
+
 
