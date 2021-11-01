@@ -10,12 +10,12 @@ function dbconnect(){
     }
 }
 
-dbconnect();
 
 function readindb(){
     $c = dbconnect();
-    $r = $c->query('SELECT id, nom, prenom, user_github_pic FROM membres');
+    $r = $c->query('SELECT membres.id, nom, prenom, user_github_pic, points FROM membres JOIN estime on membres.id = estime.id_membre ORDER BY points DESC; ');
     return $r;
+
 }
 
 

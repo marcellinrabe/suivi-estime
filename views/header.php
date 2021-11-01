@@ -10,19 +10,33 @@
                 constructor(input){
                     this.id = input;
                     this.d = document.getElementById("dn"+this.id);
-                    this.b = document.getElementById("ba"+this.id);
-                    this.clique();
+                    this.ba = document.getElementById("ba"+this.id);
+                    this.bs = document.getElementById("bs"+this.id);
+                    this.cliquea();
+                    this.cliques();
                 }
             
-                clique(){
-                this.b.addEventListener("click", () => {
+                cliquea(){ // click for append
+                this.ba.addEventListener("click", () => {
                     if(getComputedStyle(this.d).display != "none"){
                       this.d.style.display = "none";
+                
+                    } else {
+                      this.d.style.display = "block";
+                    }
+                  })  
+                }
+                cliques(){ // click for substract
+                  this.bs.addEventListener("click", () => {
+                    if(getComputedStyle(this.d).display != "none"){
+                      this.d.style.display = "none";
+      
                     } else {
                       this.d.style.display = "block";
                     }
                   })
                 }
+
             }
     </script>
 
