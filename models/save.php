@@ -27,8 +27,7 @@ function getpush(){
         else{
             updatePoint();
         }
-    }  
-    print_r($_COOKIE);
+    }
 }
 
 
@@ -39,11 +38,9 @@ function updatePoint(){
     $i = getid();
     $p = $c->prepare('SELECT points FROM estime WHERE id_membre = :i');
     $p->execute(array('i'=> $i));
-
-    echo $_COOKIE['push'];
+    
     $a = preg_match('/ba/', $_COOKIE['push']) ? (int)"1" : (int)"-1";
-    $line = $p->fetch(); 
-    echo $line['points'].'<br/>';    
+    $line = $p->fetch();    
 
 
     echo getmotif();
