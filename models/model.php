@@ -18,6 +18,14 @@ function readindb(){
 
 }
 
+function getUserNumber(){
+    $c = dbconnect();
+    $r = $c->query('SELECT COUNT(id) as users_nb FROM membres;');
+    $r= $r->fetch();
+    return $r['users_nb'];
+}
+
+
 
 
 

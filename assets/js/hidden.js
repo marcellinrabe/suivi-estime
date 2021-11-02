@@ -1,12 +1,27 @@
 test = [];
 
-if(document.getElementById("dn5") != null){
-    test.push(new Frame(1));
-    test.push(new Frame(2));
-    test.push(new Frame(3));
-    test.push(new Frame(4));
-    test.push( new Frame(5));
+function getCookie(name){
+  if(document.cookie.length == 0)
+    return null;
+
+  var regSepCookie = new RegExp('(; )', 'g');
+  var cookies = document.cookie.split(regSepCookie);
+
+  for(var i = 0; i < cookies.length; i++){
+    var regInfo = new RegExp('=', 'g');
+    var infos = cookies[i].split(regInfo);
+    if(infos[0] == name){
+      return unescape(infos[1]);
+    }
+  }
+  return null;
 }
+
+$max= getCookie('usernb');
+
+for(i=0; i< $max; i++){
+  test.push(new Frame(i+1));
+}  
 
 
   function sendData(data) {
@@ -21,7 +36,7 @@ if(document.getElementById("dn5") != null){
     XHR.addEventListener('load', function(event) {
       console.log('AJAX success');
       console.log(document.getElementById(name));
-      console.log(XHR.responseText);
+      
     });
   
     XHR.addEventListener('error', function(event) {
@@ -31,6 +46,12 @@ if(document.getElementById("dn5") != null){
     XHR.send(FD);
     
   } 
+
+
+  
+
+
+  
 
   
 

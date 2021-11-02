@@ -43,7 +43,6 @@ function updatePoint(){
     $line = $p->fetch();    
 
 
-    echo getmotif();
     // si l'id membre existe déjà dans la base donc on modifie son point
     // syntaxe: UPDATE TABLE SET COLONNE="VALEUR A JOUR" WHERE PK=1;
 
@@ -56,6 +55,7 @@ function updatePoint(){
 
 getpush();
 
+header('Location: ../index.php');
 
 
 

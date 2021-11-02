@@ -3,6 +3,9 @@
 // workspace for control output interface and datas
 require_once "models/model.php";
 
+setcookie('usernb', getUserNumber());
+
+
 function listTeams($lines){
 
     while($line = $lines->fetch()) {

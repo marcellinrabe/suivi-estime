@@ -6,16 +6,20 @@
     <div class="frame"> 
         <div class="avatar"></div>
         <!-- mandrapa lo de atao div img src="assets/img/marcellin.jpg" alt="avatar"> -->
-        <p><?= $name ?></p>
-        <p><?= $user_point ?></p>
+        <p style="padding-left:10px;"><?= $name ?></p>
+        <p style="padding-left:10px;">rank <?= $user_point ?></p>
     
 
         <form action="models/save.php" method="post">
             <!-- reto input roa reto tokony iray ihany no lasa -->
             <!-- the source below is showing where only a button making point is selected -->
             <div class="button_container">
-                <button id="ba<?=$id?>" onclick="sendData(  {ba<?=$id?>:'TRUE'}  )" type="button">+</button>
-                <button id="bs<?=$id?>" onclick="sendData(  {bs<?=$id?>:'FALSE'} )" type="button">-</button>
+                <button id="ba<?=$id?>" onclick="sendData(  {ba<?=$id?>:'TRUE'}  )" type="button">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+                <button id="bs<?=$id?>" onclick="sendData(  {bs<?=$id?>:'FALSE'} )" type="button">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
             </div>
                         
             <div id="dn<?=$id?>" class="validation">
