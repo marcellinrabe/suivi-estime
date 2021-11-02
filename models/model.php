@@ -10,7 +10,6 @@ function dbconnect(){
     }
 }
 
-
 function readindb(){
     $c = dbconnect();
     $r = $c->query('SELECT membres.id, nom, prenom, user_github_pic, points FROM membres JOIN estime on membres.id = estime.id_membre ORDER BY points DESC; ');
@@ -25,6 +24,12 @@ function getUserNumber(){
     return $r['users_nb'];
 }
 
+function getmaxid(){
+    $c = dbconnect();
+    $r = $c->query('SELECT id as maxid FROM membres ORDER BY id DESC LIMIT 1; ');
+    $r= $r->fetch();
+    return $r['maxid'];
+}
 
 
 

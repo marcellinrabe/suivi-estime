@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +8,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/fontawesome/css/all.css">
 
+
     <script>
             class Frame{
                 constructor(input){
                     this.id = input;
                     this.d = document.getElementById("dn"+this.id);
+                    console.log(this.d);
                     this.ba = document.getElementById("ba"+this.id);
                     this.bs = document.getElementById("bs"+this.id);
                     this.cliquea();

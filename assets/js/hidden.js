@@ -17,10 +17,17 @@ function getCookie(name){
   return null;
 }
 
-$max= getCookie('usernb');
+max= getCookie('usernb');
+id = getCookie('maxid');
+console.log(max);
 
-for(i=0; i< $max; i++){
-  test.push(new Frame(i+1));
+
+
+
+for(i=0; i< max; i++){ 
+  // ato no blem @le resaka id+1
+  test.push(new Frame( (id-max+1)+i) );
+  console.log(test);
 }  
 
 
@@ -44,7 +51,7 @@ for(i=0; i< $max; i++){
     });
     XHR.open('POST','models/save.php');
     XHR.send(FD);
-    
+
   } 
 
 

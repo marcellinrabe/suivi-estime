@@ -12,15 +12,16 @@ body{
 }
 
 
-.avatar{
+.avatar, img{
     height: 250px;
     width: 300px;
-    background-image: url('../img/marcellin.jpg');
     background-size: 100% 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
 }
+
+
+
 .button_container{
     text-align: center;
 }

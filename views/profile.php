@@ -2,10 +2,10 @@
 
 
     <!-- template used here -->
-   
+   <?php setcookie('id', $id); ?>
     <div class="frame"> 
-        <div class="avatar"></div>
-        <!-- mandrapa lo de atao div img src="assets/img/marcellin.jpg" alt="avatar"> -->
+        <div class="avatar"><img src="<?= $user_image ?>" alt="avatar"></div>
+        <!-- mandrapa lo de atao div  -->
         <p style="padding-left:10px;"><?= $name ?></p>
         <p style="padding-left:10px;">rank <?= $user_point ?></p>
     

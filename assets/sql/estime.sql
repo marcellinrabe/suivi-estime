@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 01 nov. 2021 à 16:54
+-- Généré le : mar. 02 nov. 2021 à 07:14
 -- Version du serveur : 10.4.21-MariaDB
 -- Version de PHP : 8.0.11
 
@@ -39,11 +39,13 @@ CREATE TABLE `estime` (
 --
 
 INSERT INTO `estime` (`id`, `motif`, `points`, `id_membre`) VALUES
-(1, 'test moins 1 sur id n1', -2, 1),
-(2, 'TRUE', -4, 2),
-(3, 'test pour ce huit oe, tokony 9', 9, 3),
-(4, 'aucune', 0, 4),
-(5, 'aucune', 0, 5);
+(20, 'test', 0, 28),
+(21, 'vide', 0, 29),
+(22, 'vide', 0, 30),
+(23, 'vide', 0, 31),
+(24, 'vide', 0, 32),
+(25, 'vide', 0, 33),
+(26, 'vide', 0, 34);
 
 --
 -- Index pour les tables déchargées
@@ -64,7 +66,7 @@ ALTER TABLE `estime`
 -- AUTO_INCREMENT pour la table `estime`
 --
 ALTER TABLE `estime`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Contraintes pour les tables déchargées

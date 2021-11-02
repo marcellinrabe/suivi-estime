@@ -43,9 +43,6 @@ function updatePoint(){
     $line = $p->fetch();    
 
 
-    // si l'id membre existe déjà dans la base donc on modifie son point
-    // syntaxe: UPDATE TABLE SET COLONNE="VALEUR A JOUR" WHERE PK=1;
-
     $r = $c->prepare("UPDATE estime SET motif= :m, points= :p WHERE id_membre= :i");
     $r->execute(array(
         'm' => getmotif(),

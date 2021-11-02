@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 01 nov. 2021 à 16:54
+-- Généré le : mar. 02 nov. 2021 à 07:15
 -- Version du serveur : 10.4.21-MariaDB
 -- Version de PHP : 8.0.11
 
@@ -33,7 +33,7 @@ CREATE TABLE `membres` (
   `prenom` char(255) DEFAULT NULL,
   `prenom_usuel` char(30) DEFAULT NULL,
   `user_github` varchar(50) DEFAULT NULL,
-  `user_github_pic` varchar(255) DEFAULT 'https://avatars.githubusercontent.com/u/92181056?v=4'
+  `user_github_pic` varchar(255) DEFAULT 'assets/img/useravatar.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -41,11 +41,13 @@ CREATE TABLE `membres` (
 --
 
 INSERT INTO `membres` (`id`, `nom`, `prenom`, `prenom_usuel`, `user_github`, `user_github_pic`) VALUES
-(1, 'RABE', 'Marcellin', 'marcellin', 'marcellinrabe', 'https://avatars.githubusercontent.com/u/92181056?v=4'),
-(2, 'RABE', 'Marcellin', 'marcellin', 'marcellinrabe', 'https://avatars.githubusercontent.com/u/92181056?v=4'),
-(3, 'RABE', 'Marcellin', 'marcellin', 'marcellinrabe', 'https://avatars.githubusercontent.com/u/92181056?v=4'),
-(4, 'RABE', 'Marcellin', 'marcellin', 'marcellinrabe', 'https://avatars.githubusercontent.com/u/92181056?v=4'),
-(5, 'RABE', 'Marcellin', 'marcellin', 'marcellinrabe', 'https://avatars.githubusercontent.com/u/92181056?v=4');
+(28, 'BAKARY', 'Gaetan Jonathan', 'Gaetan', 'gaetan1903', 'assets/img/useravatar.png'),
+(29, 'BOTORAVONY', 'Arlème Johnson', 'Arlème', 'rootkit7628', 'assets/img/useravatar.png'),
+(30, 'MASY', 'Charla Rosalie', 'Charla', 'Charla19', 'assets/img/useravatar.png'),
+(31, 'RAFANOMEZANA', 'Herimamy Hasintso', 'Hasintso', 'hasintso2071', 'assets/img/useravatar.png'),
+(32, 'HAJATIANA', 'Sitraka', 'Haja', 'Jayah001', 'assets/img/useravatar.png'),
+(33, 'LIANTSOA', 'Santatriniana Melchia', 'Melchia', 'mel1742', 'assets/img/useravatar.png'),
+(34, 'Randriamanantena Grégoire', 'DOMINICK', 'Dominick', 'c3k4ah', 'assets/img/useravatar.png');
 
 --
 -- Index pour les tables déchargées
@@ -65,7 +67,7 @@ ALTER TABLE `membres`
 -- AUTO_INCREMENT pour la table `membres`
 --
 ALTER TABLE `membres`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
