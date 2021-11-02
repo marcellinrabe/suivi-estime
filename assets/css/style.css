@@ -1,0 +1,32 @@
+body{
+    font-family: Arial;
+    font-size: 0.85em;
+}
+.frame{
+    background: rgb(247, 227, 227);
+    display: inline-block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin:20px 50px;
+    padding-bottom: 20px;
+}
+
+
+.avatar{
+    height: 250px;
+    width: 300px;
+    background-image: url('../img/marcellin.jpg');
+    background-size: 100% 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+.button_container{
+    text-align: center;
+}
+
+.validation{
+    display: none;
+    text-align: center;
+}
+    
