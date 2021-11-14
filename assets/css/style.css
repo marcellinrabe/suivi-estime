@@ -10,8 +10,17 @@ body{
     font-size: 0.85em;
     width: 1100px;
     margin: auto;
-    
 }
+
+.grand_titre{
+    border: 1px solid #008080;
+    border-radius: 10px;
+    font-family: "Menlo";
+    padding: 10px;
+    color: #008080;
+
+}
+
 .frame{
     background: #008080;
     color: white;
