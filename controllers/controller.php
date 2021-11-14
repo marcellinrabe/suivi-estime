@@ -1,22 +1,39 @@
-
 <?php
-// workspace for control output interface and datas
 require_once "models/model.php";
 
-setcookie('usernb', getUserNumber()); setcookie('maxid', getmaxid());
 
+function home(){
+    /**
+     * affiche la page principale
+     */
 
-function listTeams($lines){
-
-    while($line = $lines->fetch()) {
-        
+    require_once 'views/header.php';
+    $request = new Request();
+    $datas_team = $request->get_datas_team();
+    $last_id = $request->get_last_id();
+    $teams_count = $request->get_teams_count();
+    
+    
+    foreach($datas_team as $line){
         $id = $line['id'];
-        $user_image = $line['user_github_pic'];
-        $user_point = $line['points']; 
+        $user_pic = $line['user_github_pic'];
+        $point = $line['point'];
         $name = $line['nom'].' '.$line['prenom'];
         require 'views/profile.php';
     }
-    $lines->closeCursor();
+}
+
+
+function update(){ 
+    /**
+     * @param $_POST['motif_updatePoint'] O.K
+     * @param $bouton append/sub ??
+     *  */ 
+    //updatePoint($_POST['option'], $_POST['motif']);
+    
+    
+    print_r($_POST);
+
 }
 
 

@@ -1,39 +1,55 @@
+    <div class="frame">
 
+        <div class="avatar">
+            <img src="<?= $user_pic ?>" alt="avatar">
+        </div>
 
-
-    <!-- template used here -->
-   <?php setcookie('id', $id); ?>
-    <div class="frame"> 
-        <div class="avatar"><img src="<?= $user_image ?>" alt="avatar"></div>
-        <!-- mandrapa lo de atao div  -->
-        <p style="padding-left:10px;"><?= $name ?></p>
-        <p style="padding-left:10px;">rank <?= $user_point ?></p>
+        <p   style="padding-left:10px;"><?= $name ?></p>
+        <p   style="padding-left:10px;">rank <?= $point ?></p>
     
 
-        <form action="models/save.php" method="post">
-            <!-- reto input roa reto tokony iray ihany no lasa -->
-            <!-- the source below is showing where only a button making point is selected -->
+        <form action="index.php?action=update" method="post">
+
             <div class="button_container">
-                <button id="ba<?=$id?>" onclick="sendData(  {ba<?=$id?>:'TRUE'}  )" type="button">
-                    <i class="fas fa-chevron-up"></i>
+
+                <button id="button_appendPoint<?=$id?>" onclick="option='append'" type="button">
+                    <i class="fas fa-chevron-up"></i>+
                 </button>
-                <button id="bs<?=$id?>" onclick="sendData(  {bs<?=$id?>:'FALSE'} )" type="button">
-                    <i class="fas fa-chevron-down"></i>
+
+                <button id="button_substractPoint<?=$id?>" onclick="option='substract'" type="button">
+                    <i class="fas fa-chevron-down"></i>-
                 </button>
+
             </div>
                         
-            <div id="dn<?=$id?>" class="validation">
+            <div id="div_toValid<?=$id?>" class="validation">
                 <p>
-                    <label for="motif">motif</label><br/>
-                    <textarea name="m<?=$id?>" id="motif" cols="30" rows="5" required></textarea>
+                    <label for="motif_updatePoint">motif</label><br/>
+                    <!-- $_POST['motif_updatePoint'] 
+
+                    -->
+                    <textarea name="motif_updatePoint<?=$id?>" id="motif_updatePoint" cols="30" rows="5" required></textarea>
                 </p>
 
-                <div><input  type="submit"  value="valider"></div>
+                <div>
+                    <input id="validation" onclick="apply_update()" type="submit" value="valider">
+                </div>
+
             </div>
 
-        <!-- ------------------------------------------------------------------------ -->
         </form>
-        <form action="" method="post"></form>
     </div>
-    <script type="text/javascript" src="assets/js/hidden.js"></script>
+
+    <?php if($id == 1){
+    // condition pour que les variables last_id et teams_count soient declarées une et une seule fois
+    ?>
+        <script> 
+            let last_id = <?=$last_id?>;
+            let id = <?=$id?>;
+        </script>
+
+    <?php } ?>
+        
+
+    <script type="text/javascript" src="assets/js/index.js"></script>
 

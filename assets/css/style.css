@@ -9,6 +9,7 @@ body{
     border-top-right-radius: 10px;
     margin:20px 50px;
     padding-bottom: 20px;
+    max-width:300px;
 }
 
 

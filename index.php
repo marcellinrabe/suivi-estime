@@ -1,12 +1,26 @@
 <?php
+    
+    require_once 'controllers/controller.php';
+    
+    $action = htmlspecialchars($_GET['action']);
+    
 
-    require 'views/header.php'; 
-    $user_image = NULL;
-    $name = NULL;
-    $id = NULL;
+    if((!empty($action)) && $action=="update"){
+        update();
+    }
+    else{ 
+        home();
+    
+    }
+    
 
-    require 'controllers/controller.php';
-    listTeams(readindb());
+
+
+    
+
+    
+
+    
 
     
     

@@ -5,47 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test iteams</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/fontawesome/css/all.css">
 
-
-    <script>
-            class Frame{
-                constructor(input){
-                    this.id = input;
-                    this.d = document.getElementById("dn"+this.id);
-                    console.log(this.d);
-                    this.ba = document.getElementById("ba"+this.id);
-                    this.bs = document.getElementById("bs"+this.id);
-                    this.cliquea();
-                    this.cliques();
-                }
-            
-                cliquea(){ // click for append
-                this.ba.addEventListener("click", () => {
-                    if(getComputedStyle(this.d).display != "none"){
-                      this.d.style.display = "none";
+    <script> 
+        let frames = [];
+        option = null;
+        class Frame{
+                constructor(id){
+                    this.id = id;
+                    this.div_toValid = document.getElementById("div_toValid"+this.id);
+                    console.log(this.div_toValid);
+                    this.button_appendPoint = document.getElementById("button_appendPoint"+this.id);
+                    this.button_substractPoint = document.getElementById("button_substractPoint"+this.id);
+                    
+                    this.button_appendPoint.addEventListener("click", () => {
+                        if(getComputedStyle(this.div_toValid).display != "none"){
+                            this.div_toValid.style.display = "none";
                 
-                    } else {
-                      this.d.style.display = "block";
-                    }
-                  })  
-                }
-                cliques(){ // click for substract
-                  this.bs.addEventListener("click", () => {
-                    if(getComputedStyle(this.d).display != "none"){
-                      this.d.style.display = "none";
+                        }
+                        else{
+                            this.div_toValid.style.display = "block";
+                        } 
+                    });  
+                
+                
+                    this.button_substractPoint.addEventListener("click", () => {
+                        if(getComputedStyle(this.div_toValid).display != "none"){
+                            this.div_toValid.style.display = "none";
       
-                    } else {
-                      this.d.style.display = "block";
-                    }
-                  })
+                        }
+                        else{
+                            this.div_toValid.style.display = "block";
+                        } 
+                    });  
                 }
-
-            }
+        }
     </script>
-
-    <title>test iteams</title>
 </head>
 <body>
     
