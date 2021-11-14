@@ -67,22 +67,29 @@ class Request extends Connect{
     public function updatePoint($option, $motif){
         /**
          * ajoute ou supprime un point d'un membre
-         * @param option est le type de modification (ajout ou suppression de point)
+         * @param option est le type de modification (ajout ou suppression de point) 
+         * @param motif contient en plus du texte motif de mis à jour de point, l'id du de membre à partir 
+         * de la 17è position jusqu'à la fin en comptant de 0 
          */
 
+
         
-        if(preg_match('/[as]/', $option)):
-            // on verifie que la variable option est soit a(append) ou s(substract)
-            global $point;
-            global $id;
+        if(preg_match('/(append)|(substract)/', $option)):
+            /**
+             * verifie que la variable option est soit a(append) ou s(substract)
+             * tronque l'id dans la variable motif
+             */ 
+
+            $id = substr($motif, 17);
+            $id = intval($id);
 
             $connection = dbconnect();
     
             // $option sera 1 ou -1 selon que l'admin a cliquer sur le bouton append ou sub
-            if($option == 'a'){
+            if($option == 'append'){
                 $option = 1;
             }
-            elseif($option == 's'){
+            elseif($option == 'substract'){
                 $option = -1;
             }
 

@@ -27,12 +27,13 @@ function home(){
 function update(){ 
     /**
      * @param $_POST['motif_updatePoint'] O.K
-     * @param $bouton append/sub ??
-     *  */ 
-    //updatePoint($_POST['option'], $_POST['motif']);
-    
-    
-    print_r($_POST);
+     * @param $bouton append/sub ?? O.K par ajax
+     */ 
+
+    $request = new Request();
+    foreach($_POST as $key => $value){
+        echo $key.' '.$value;
+    }
 
 }
 

@@ -13,11 +13,11 @@
             <div class="button_container">
 
                 <button id="button_appendPoint<?=$id?>" onclick="option='append'" type="button">
-                    <i class="fas fa-chevron-up"></i>+
+                    <i class="fas fa-chevron-up"></i>
                 </button>
 
                 <button id="button_substractPoint<?=$id?>" onclick="option='substract'" type="button">
-                    <i class="fas fa-chevron-down"></i>-
+                    <i class="fas fa-chevron-down"></i>
                 </button>
 
             </div>
@@ -25,9 +25,7 @@
             <div id="div_toValid<?=$id?>" class="validation">
                 <p>
                     <label for="motif_updatePoint">motif</label><br/>
-                    <!-- $_POST['motif_updatePoint'] 
-
-                    -->
+                    
                     <textarea name="motif_updatePoint<?=$id?>" id="motif_updatePoint" cols="30" rows="5" required></textarea>
                 </p>
 
@@ -41,11 +39,10 @@
     </div>
 
     <?php if($id == 1){
-    // condition pour que les variables last_id et teams_count soient declarées une et une seule fois
+    // condition pour que les variables last_id  soit declaré une et une seule fois
     ?>
         <script> 
             let last_id = <?=$last_id?>;
-            let id = <?=$id?>;
         </script>
 
     <?php } ?>

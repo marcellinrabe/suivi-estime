@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test iteams</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets//css/fontawesome/css/all.css">
 
     <script> 
         let frames = [];
+        let afterClick = [];
         option = null;
         class Frame{
                 constructor(id){

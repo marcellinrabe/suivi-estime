@@ -25,7 +25,7 @@ function sendData(data){
 
 
 
-for(i=0; i<last_id; i++){  
+for(i=0; i<last_id-1; i++){  
 /**
  * la variable i est juste ici un compteur
  * instanciation de chaque objet Frame qui fait reference à l'affichage de chaque membre
@@ -47,6 +47,8 @@ function apply_update(){
 
     button_update = document.getElementById("validation");
     motif = document.getElementById("motif_updatePoint").value;
+    
+    console.log(option);
 
     let afterClick = button_update.addEventListener("click", (event) => {
         event.preventDefault();
