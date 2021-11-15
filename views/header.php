@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets//css/fontawesome/css/all.css">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/LOGO iteams.png">
-
+    <script src="./assets/jquery-3.6.0.min.js"></script>
     <script> 
+    // adoption de jquery
         let frames = [];
         let afterClick = [];
         option = null;
