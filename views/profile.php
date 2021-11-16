@@ -1,6 +1,6 @@
     <div class="frame">
 
-        <div class="avatar">
+        <div id= "avatar<?=$id?>" class="avatar">
             <img src="<?= $user_pic ?>" alt="avatar">
         </div>
 
