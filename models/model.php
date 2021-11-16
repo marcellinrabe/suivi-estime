@@ -104,7 +104,7 @@ class Request extends Connect{
                 'motif' => $motif,
                 'newPoint' => $point+$option,
                 'id' => $id));
-            echo $point+$option; 
+            echo $point+$option;
             
     } 
 

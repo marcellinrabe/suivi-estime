@@ -9,6 +9,7 @@
       })
       .done(function(response){
           $("#rank"+id).text("estime : "+response);
+          $("#motif_updatePoint"+id).val(" ");
 
       })
       
