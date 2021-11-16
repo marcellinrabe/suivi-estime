@@ -66,12 +66,15 @@
 
         $("#validation"+id).on("click", function(event){
             event.preventDefault();
-        
-            send_data(id, {
-                "motif": $("#motif_updatePoint"+id).val(),
-                "option": option+id
-            }); 
-            alert("cette action est irréversible");
+            if(confirm("Cette action est irréversible\nÊtes-vous sûr?")){
+                send_data(id, {
+                    "motif": $("#motif_updatePoint"+id).val(),
+                    "option": option+id
+                }); 
+            }
+            else{
+                $("#motif_updatePoint"+id).val(" ");
+            }
         });
 
     })
