@@ -1,4 +1,7 @@
  // conteneur des objets utilisateurs affichés dans la page
+
+ 
+ 
  function get_last_id(id){
 
 
@@ -8,19 +11,19 @@
     })
 
     .done(function(response){
+
+        let last_id = parseInt(response);
         
-        let last_id = JSON.stringify(response);
-        last_id = parseInt(last_id);
         if(id == last_id){
+            console.log("comparaison succes");
             for(cpt=0; cpt < last_id; cpt++){  
             /**
             * la variable i est juste ici un compteur
             * instanciation de chaque objet Frame qui fait reference à l'affichage de chaque membre
             * executer une seule fois et à la derniere instanciation des membres
             */
-                if(cpt!= 23){
+                if( cpt != 23){
                     frames.push(new Frame(cpt + 1));
-                    console.log(cpt);
                 }
             }
         }
@@ -35,13 +38,13 @@
  function get_id(){
 
     $.ajax({
-        url:"index.php?action=get_id",
+        url:"index.php?action=get_id&index="+incr(),
         method:"GET",
     })
 
     .done(function(response){
-        let id = JSON.stringify(response);
-        console.log(id);
+        let id = parseInt(response);
+        get_last_id(id);
     })
 
     .fail(function(error){

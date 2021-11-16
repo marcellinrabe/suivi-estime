@@ -42,14 +42,14 @@ function get_last_id(){
     echo $last_id;
 }
 
-function get_id(){
+function get_id(int $index){
 /**
  * on veut qu'à chaque de cette fonction, elle fetch un à une l'id dans la base
  */
  
  $request = new Request();
  $datas_team = $request->get_datas_team();
- // retour
+ echo $datas_team[$index]['id'];
 
 
 }    

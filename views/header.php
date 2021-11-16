@@ -12,7 +12,15 @@
     <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <script> 
     // adoption de jquery
+        function compteur(){
+            let cpt = 0;
+            return function(){
+                return cpt++;
+            }
+        }
+
         let frames = [];
+        let incr = compteur();
         let afterClick = [];
         option = null;
         class Frame{
