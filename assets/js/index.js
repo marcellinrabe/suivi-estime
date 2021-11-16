@@ -71,6 +71,7 @@
                 "motif": $("#motif_updatePoint"+id).val(),
                 "option": option+id
             }); 
+            alert("cette action est irréversible");
         });
 
     })
