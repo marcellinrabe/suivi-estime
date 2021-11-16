@@ -81,9 +81,8 @@ class Request extends Connect{
     public function updatePoint($option, $motif){
         /**
          * ajoute ou supprime un point d'un membre
-         * @param option est le type de modification (ajout ou suppression de point) 
-         * @param motif contient en plus du texte motif de mis à jour de point, l'id du de membre à partir 
-         * de la 17è position jusqu'à la fin en comptant de 0 
+         * @param option est le type de modification (ajout ou suppression de point) et l'id du membre correspondant
+         * @param motif contient du texte qui est le motif du mis à jour de point 
          */
             $id = NULL;
             if(preg_match("/appendTo/", $option)){
