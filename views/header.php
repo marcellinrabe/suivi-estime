@@ -28,10 +28,12 @@
         /**
          * @var frames: un tableau contenant la reference de tous les objets Frame instanciés
          * @var inct: un entier suite à l'incrementation par la fonction incrementer()
-         * @var afterClick: none
-         * @var option: none
+         * 
+         * @var option: chaine qui sera toujours soit "append" ou "substract" et envoyer au serveur au moment 
+         * de l'enregistrement d'un modification d'estime, doit être une variable global pour raison de portée
+         * 
          */
-        let frames = [], afterClick = []; 
+        let frames = []; 
         let incr = incrementer();
         option = null;
 
@@ -44,11 +46,11 @@
                 $("#button_appendPoint"+this.id).on("click", function(event){
                     if($("#div_toValid"+id).css("display") != "none"){
                         $("#avatar"+id).slideDown();
-                        $("#div_toValid"+id).slideUp();
+                        $("#div_toValid"+id).slideUp();                        
                     }
                     else{
                         $("#avatar"+id).slideUp();
-                        $("#div_toValid"+id).slideDown();   
+                        $("#div_toValid"+id).slideDown();                 
                     }
                 }); 
 

@@ -31,9 +31,8 @@ function update(){
      */ 
 
     $request = new Request();
-    foreach($_POST as $key => $value){
-        echo $key.' '.$value;
-    }
+    $request->updatePoint($_POST['option'], $_POST['motif']);
+    
 }
 
 function get_last_id(){

@@ -4,19 +4,19 @@
             <img src="<?= $user_pic ?>" alt="avatar">
         </div>
 
-        <p   style="padding-left:10px;"><?= $name ?></p>
-        <p   style="padding-left:10px;">rank <?= $point ?></p>
+        <p style="padding-left:10px;"><?= $name ?></p>
+        <p id="rank<?=$id?>" style="padding-left:10px;">estime : <?= $point ?></p>
     
 
         <form action="index.php?action=update" method="post">
 
             <div class="button_container">
 
-                <button id="button_appendPoint<?=$id?>" onclick="option='append'" type="button">
+                <button id="button_appendPoint<?=$id?>" onclick="option='appendTo'" type="button">
                     <i class="fas fa-chevron-up"></i>
                 </button>
 
-                <button id="button_substractPoint<?=$id?>" onclick="option='substract'" type="button">
+                <button id="button_substractPoint<?=$id?>" onclick="option='substractTo'" type="button">
                     <i class="fas fa-chevron-down"></i>
                 </button>
 
@@ -24,13 +24,13 @@
                         
             <div id="div_toValid<?=$id?>" class="validation">
                 <p>
-                    <label for="motif_updatePoint">motif</label><br/>
+                    <label for="motif_updatePoint<?=$id?>"><h2>MOTIF</h2></label>
                     
-                    <textarea name="motif_updatePoint<?=$id?>" id="motif_updatePoint" cols="30" rows="5" required></textarea>
+                    <input type="text" name="motif_updatePoint<?=$id?>" id="motif_updatePoint<?=$id?>" required>
                 </p>
 
                 <div>
-                    <input id="validation" onclick="apply_update()" type="submit" value="valider">
+                    <input id="validation<?=$id?>" type="submit" value="valider">
                 </div>
 
             </div>

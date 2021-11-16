@@ -1,5 +1,22 @@
- // conteneur des objets utilisateurs affichés dans la page
+ 
+ function send_data(id, donnees){
+    // envoie de donnée javascript à php 
+    // transformation en requete ajax suivant jquery
+      $.ajax({
+          url: "index.php?action=update",
+          method: "POST",
+          data: donnees
+      })
+      .done(function(response){
+          $("#rank"+id).text("estime : "+response);
 
+      })
+      
+      .fail(function(error) {
+          console.log(error);
+      });
+  }
+  
  
  
  function get_last_id(id){
@@ -45,6 +62,16 @@
     .done(function(response){
         let id = parseInt(response);
         get_last_id(id);
+
+        $("#validation"+id).on("click", function(event){
+            event.preventDefault();
+        
+            send_data(id, {
+                "motif": $("#motif_updatePoint"+id).val(),
+                "option": option+id
+            }); 
+        });
+
     })
 
     .fail(function(error){
@@ -53,52 +80,15 @@
 
  }
 
-// if cpt = last_id
+
 get_id();
 
-function sendData(data){
-  // envoie de donnée javascript à php 
 
-    let XHR = new XMLHttpRequest(), FD  = new FormData(), name;
-      
-    for (name in data){
-        FD.append(name, data[name]);
-    }
-  
-    XHR.addEventListener('load', function(event){
-        console.log('AJAX success');
-        console.log(XHR.responseText);
-    });
-    
-    XHR.addEventListener('error', function(event) {
-        console.log('AJAX failure');
-    });
-  
-    XHR.open('POST','index.php?action=update');
-    XHR.send(FD);
-}
-
-function apply_update(){
-    /**
-     * regex sur option qui doit être soit append ou substract
-     * annulation du comportement par defaut de 
-     */
-    
-    button_update = $("#validation"); 
-    motif =_$("#motif_updatePoint"); 
-
-    $("#validation").on("click", function(event){
-        event.preventDefault();
-
-        sendData({
-            "motif": motif,
-            "option": option
-        });
-
-    });
 
     
-}
+
+    
+
 
 
 

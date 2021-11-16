@@ -32,6 +32,7 @@ class Request extends Connect{
     }
 
 
+
     public function get_teams_count(){
     // renvoie le total des effectifs des membres
          
@@ -62,7 +63,20 @@ class Request extends Connect{
         }
     }
     
-    
+    public function get_point(int $id):int{
+        try{
+            $connection = $this->dbconnect();
+
+            $get_point = $connection->prepare("SELECT point FROM estime  WHERE id_membre = :id");
+            $get_point->execute(    array('id' => $id)   );
+            $result = $get_point->fetch();
+            return $result['point'];
+        }
+        catch(Exception $exception){
+            echo "Erreur : ".$exception.getMessage();
+        }
+
+    }
 
     public function updatePoint($option, $motif){
         /**
@@ -71,34 +85,27 @@ class Request extends Connect{
          * @param motif contient en plus du texte motif de mis à jour de point, l'id du de membre à partir 
          * de la 17è position jusqu'à la fin en comptant de 0 
          */
-
-
-        
-        if(preg_match('/(append)|(substract)/', $option)):
-            /**
-             * verifie que la variable option est soit a(append) ou s(substract)
-             * tronque l'id dans la variable motif
-             */ 
-
-            $id = substr($motif, 17);
-            $id = intval($id);
-
-            $connection = dbconnect();
-    
-            // $option sera 1 ou -1 selon que l'admin a cliquer sur le bouton append ou sub
-            if($option == 'append'){
+            $id = NULL;
+            if(preg_match("/appendTo/", $option)){
+                $id = substr($option, 8);
                 $option = 1;
             }
-            elseif($option == 'substract'){
+            elseif(preg_match("/substractTo/", $option)){
+                $id = substr($option, 11);
                 $option = -1;
             }
+            $id = intval($id);
+            $point = $this->get_point($id);
+            
 
-            $request = $connection->prepare("UPDATE estime AS e SET e.motif= :motif, e.point= :newPoint WHERE e.id_membre= :id");
-            $request->execute(array(
-                'motif' => $_POST['motif_updatePoint'],
+            $connection = $this->dbconnect();
+            $set_update = $connection->prepare("UPDATE estime AS e SET e.motif= :motif, e.point= :newPoint WHERE e.id_membre= :id");
+            $set_update->execute(array(
+                'motif' => $motif,
                 'newPoint' => $point+$option,
                 'id' => $id));
-        endif;
+            echo $point+$option; 
+            
     } 
 
 

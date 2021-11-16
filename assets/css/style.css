@@ -8,8 +8,7 @@
 body{
     font-family: "Arial";
     font-size: 0.85em;
-    width: 1100px;
-    margin: auto;
+    
 }
 
 .grand_titre{
@@ -28,10 +27,9 @@ body{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin:20px 50px;
-    padding-bottom: 20px;
-    min-width:250px;
-    max-width:250px;
-    
+    min-width:275px;
+    max-width:275px;
+    height: 300px;
     
 }
 
@@ -72,4 +70,11 @@ button[type="button"]:hover{
     color: white;
     border: 1px solid white;
     
+}
+
+input[type="text"]{
+    height: 75px;
+    width: 250px;
+    margin:0px;
+    padding:0px;
 }
