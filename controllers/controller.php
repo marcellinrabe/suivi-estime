@@ -34,8 +34,26 @@ function update(){
     foreach($_POST as $key => $value){
         echo $key.' '.$value;
     }
-
 }
+
+function get_last_id(){
+    $request = new Request();
+    $last_id = $request->get_last_id();
+    echo $last_id;
+}
+
+function get_id(){
+/**
+ * on veut qu'à chaque de cette fonction, elle fetch un à une l'id dans la base
+ */
+ 
+ $request = new Request();
+ $datas_team = $request->get_datas_team();
+ // retour
+
+
+}    
+
 
 
 

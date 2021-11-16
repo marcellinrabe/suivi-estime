@@ -37,16 +37,5 @@
 
         </form>
     </div>
-
-    <?php if($id == 1){
-    // condition pour que les variables last_id  soit declaré une et une seule fois
-    ?>
-        <script> 
-            let last_id = <?=$last_id?>;
-        </script>
-
-    <?php } ?>
-        
-
     <script type="text/javascript" src="assets/js/index.js"></script>
 
