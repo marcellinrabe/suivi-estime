@@ -23,8 +23,6 @@
             }
         }
 
-
-
         /**
          * @var frames: un tableau contenant la reference de tous les objets Frame instanciés
          * @var inct: un entier suite à l'incrementation par la fonction incrementer()

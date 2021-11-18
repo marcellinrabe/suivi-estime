@@ -22,7 +22,7 @@ class Request extends Connect{
     public function get_datas_team(){
         try{ 
             $connection = $this->dbconnect();
-            $request = $connection->query('SELECT m.id, m.nom, m.prenom, m.user_github_pic, e.point FROM membre AS m JOIN estime AS e on m.id = e.id_membre ORDER BY m.id;');
+            $request = $connection->query('SELECT m.id, m.nom, m.prenom, m.user_github_pic, e.point FROM membre AS m JOIN estime AS e on m.id = e.id_membre ORDER BY e.point DESC;');
             $result = $request->fetchAll(); 
             return $result;
         }
