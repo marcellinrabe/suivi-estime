@@ -5,7 +5,10 @@ class Connect{
      
     protected function dbconnect(){
         try{
-            $connection = new PDO('mysql:host=127.0.0.1;dbname=ITEAMS','root','');
+            $file = "dbconf.json";
+            $data = file_get_contents($file);
+            $dbconf = json_decode($data);
+            $connection = new PDO("mysql:host=$dbconf->host;dbname=$dbconf->dbname", $dbconf->username, $dbconf->password);
             return $connection;
             
         }
